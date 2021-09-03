@@ -1,0 +1,48 @@
+[class*="mrw-grid"] > .wp-block-group__inner-container {
+	display: grid;
+	grid-gap: 1em;
+}
+
+[class*="mrw-grid"] > .wp-block-group__inner-container > * {
+	margin: 0 !important;
+}
+
+[class*="mrw-grid"] > .wp-block-group__inner-container > .wp-block-image {
+	align-self: center;
+	justify-self: center;
+}
+
+.is-style-mrw-grid--auto .wp-block-group__inner-container {
+	grid-template-columns: repeat( auto-fill, minmax(12em, 1fr) );
+}
+
+@media( min-width: 29em ) {
+	.is-style-mrw-grid--2col .wp-block-group__inner-container,
+	.is-style-mrw-grid--3col .wp-block-group__inner-container {
+		/* see: https://css-tricks.com/you-want-minmax10px-1fr-not-1fr/ */
+		grid-template-columns: repeat( 2, minmax( 1em, 1fr ) );
+	}
+}
+
+@media( min-width: 42em ) {
+	.is-style-mrw-grid--3col .wp-block-group__inner-container {
+		grid-template-columns: repeat( 3, minmax( 1em, 1fr ) );
+	}
+}
+
+/* Flex Grid */
+[class*="mrw-flex-grid"] > .wp-block-group__inner-container {
+	display: flex;
+	gap: 1em;
+	align-items: stretch;
+}
+
+.is-style-mrw-grid--auto .wp-block-group__inner-container > * {
+	min-width: 5em;
+}
+
+@supports( gap: 1em ) {
+	[class*="mrw-flex-grid"] > .wp-block-group__inner-container > * {
+		margin: 0 !important;
+	}
+}

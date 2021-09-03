@@ -1,0 +1,4 @@
+[class*="mrw-grid"] > .wp-block-group__inner-container > [data-empty="true"] {
+	outline: 1px dashed #ccc;
+	padding: .5em;
+}
